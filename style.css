@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f0f14;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #151520;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #7c5cff;
+}
+
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #7c5cff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #7c5cff, #2b2bff);
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features .grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1b1b25;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.extension-card {
+  background: #1b1b25;
+  margin: 20px auto;
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #151520;
+}
