@@ -1,22 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/689156f67f808f192df0bdf2/1j1rrncp9';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 <head>
   <meta charset="UTF-8">
-  <title>BloxDice</title>
-  <link href=https://bloxdice.itsnotskeleton.xyz/bloxdice.png rel=icon>
+  <title>spin</title>
   <style>
     body {
       text-align: center;
@@ -86,7 +72,7 @@ s0.parentNode.insertBefore(s1,s0);
       const final = spins + angle;
       wheel.style.transform = `rotate(${final}deg)`;
       setTimeout(() => {
-        const res = angle < 180 ? 'You win! Please use the support on the main page and take an screenshot of this message and tell us you won.' : 'You lost.';
+        const res = angle < 180 ? 'you win.' : 'You lost.';
         alert(res);
         result.textContent = res;
         spinning = false;
